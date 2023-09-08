@@ -12,7 +12,12 @@ function generatePassword() {
   while (passLength < 8 || passLength > 128) {
     passLength = window.prompt("Please choose a length of at least 8 characters and no more than 128 characters")
   }
-  return passLength
+
+  let upperCrit = confirm("Would you like uppercase (ABC) in the password? Ok for True, Cancel for False.")
+  let lowerCrit = confirm("Would you like lowercase (abc) in the password? Ok for True, Cancel for False.")
+  let numCrit = confirm("Would you like numbers (123) in the password? Ok for True, Cancel for False.")
+  let symbolCrit = confirm("Would you like special characters (\!@#) in the password?")
+  return console.log(lowerCrit, upperCrit, numCrit, symbolCrit)
 }
 
 // Get references to the #generate element
