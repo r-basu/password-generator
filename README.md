@@ -1,10 +1,14 @@
+# Javascript Password Generator
+
 Javascript focused project involving objects, arrays, loops and functions to complete a working password generator matching the below criteria.
 
 Application Page Deployment: https://r-basu.github.io/password-generator/
 
 Initial code skeleton pulled from: https://github.com/coding-boot-camp/friendly-parakeet
 
-# ACCEPTANCE CRITERIA
+## Acceptance Criteria
+
+```
 GIVEN I need a new, secure password
 WHEN I click the button to generate a password
 THEN I am presented with a series of prompts for password criteria
@@ -20,38 +24,37 @@ WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
+```
+### Technical Acceptance Criteria: 40%
 
-Technical Acceptance Criteria: 40%
+* Satisfies all of the preceding acceptance criteria.
 
-    Satisfies all of the above acceptance criteria plus the following:
-        The Challenge should not produce any errors in the console when you inspect it using Chrome DevTools.
+### Deployment: 32%
 
-Deployment: 32%
+* Application deployed at live URL.
 
-    Application deployed at live URL.
+* Application loads with no errors.
 
-    Application loads with no errors.
+* Application GitHub URL submitted.
 
-    Application GitHub URL submitted.
+* GitHub repository that contains application code.
 
-    GitHub repository that contains application code.
+### Application Quality: 15%
 
-Application Quality: 15%
+* Application user experience is intuitive and easy to navigate.
 
-    Application user experience is intuitive and easy to navigate.
+* Application user interface style is clean and polished.
 
-    Application user interface style is clean and polished.
+* Application resembles the mock-up functionality provided in the Challenge instructions.
 
-    Application resembles the mock-up functionality provided in the Challenge instructions.
+### Repository Quality: 13%
 
-Repository Quality: 13%
+* Repository has a unique name.
 
-    Repository has a unique name.
+* Repository follows best practices for file structure and naming conventions.
 
-    Repository follows best practices for file structure and naming conventions.
+* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
 
-    Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
+* Repository contains multiple descriptive commit messages.
 
-    Repository contains multiple descriptive commit messages.
-
-    Repository contains a quality README file with description, screenshot, and link to deployed application.
+* Repository contains quality readme file with description, screenshot, and link to deployed application.
