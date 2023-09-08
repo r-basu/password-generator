@@ -27,7 +27,7 @@ function generatePassword() {
     symbolCrit = confirm("Would you like special characters (\!@#) in the password?")
   }
 
-  return console.log(upperCrit, lowerCrit, numCrit, symbolCrit)
+  return [upperCrit, lowerCrit, numCrit, symbolCrit]
 }
 
 // Get references to the #generate element
