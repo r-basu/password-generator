@@ -13,11 +13,21 @@ function generatePassword() {
     passLength = window.prompt("Please choose a length of at least 8 characters and no more than 128 characters")
   }
 
-  let upperCrit = confirm("Would you like uppercase (ABC) in the password? Ok for True, Cancel for False.")
-  let lowerCrit = confirm("Would you like lowercase (abc) in the password? Ok for True, Cancel for False.")
-  let numCrit = confirm("Would you like numbers (123) in the password? Ok for True, Cancel for False.")
-  let symbolCrit = confirm("Would you like special characters (\!@#) in the password?")
-  return console.log(lowerCrit, upperCrit, numCrit, symbolCrit)
+  upperCrit = confirm("Would you like uppercase (ABC) in the password? Ok for True, Cancel for False.")
+  lowerCrit = confirm("Would you like lowercase (abc) in the password? Ok for True, Cancel for False.")
+  numCrit = confirm("Would you like numbers (123) in the password? Ok for True, Cancel for False.")
+  symbolCrit = confirm("Would you like special characters (\!@#) in the password?")
+
+
+  while (upperCrit === false && lowerCrit === false && numCrit === false && symbolCrit === false) {
+    window.alert("Please select atleast one character type to be included in the password!")
+    upperCrit = confirm("Would you like uppercase (ABC) in the password? Ok for True, Cancel for False.")
+    lowerCrit = confirm("Would you like lowercase (abc) in the password? Ok for True, Cancel for False.")
+    numCrit = confirm("Would you like numbers (123) in the password? Ok for True, Cancel for False.")
+    symbolCrit = confirm("Would you like special characters (\!@#) in the password?")
+  }
+
+  return console.log(upperCrit, lowerCrit, numCrit, symbolCrit)
 }
 
 // Get references to the #generate element
