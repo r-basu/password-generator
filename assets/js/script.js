@@ -13,21 +13,35 @@ function generatePassword() {
     passLength = window.prompt("Please choose a length of at least 8 characters and no more than 128 characters")
   }
 
-  upperCrit = confirm("Would you like uppercase (ABC) in the password? Ok for True, Cancel for False.")
-  lowerCrit = confirm("Would you like lowercase (abc) in the password? Ok for True, Cancel for False.")
-  numCrit = confirm("Would you like numbers (123) in the password? Ok for True, Cancel for False.")
-  symbolCrit = confirm("Would you like special characters (\!@#) in the password?")
+  // upperCrit = confirm("Would you like uppercase (ABC) in the password? Ok for True, Cancel for False.")
+  // lowerCrit = confirm("Would you like lowercase (abc) in the password? Ok for True, Cancel for False.")
+  // numCrit = confirm("Would you like numbers (123) in the password? Ok for True, Cancel for False.")
+  // symbolCrit = confirm("Would you like special characters (\!@#) in the password?")
 
-
-  while (upperCrit === false && lowerCrit === false && numCrit === false && symbolCrit === false) {
-    window.alert("Please select atleast one character type to be included in the password!")
-    upperCrit = confirm("Would you like uppercase (ABC) in the password? Ok for True, Cancel for False.")
-    lowerCrit = confirm("Would you like lowercase (abc) in the password? Ok for True, Cancel for False.")
-    numCrit = confirm("Would you like numbers (123) in the password? Ok for True, Cancel for False.")
-    symbolCrit = confirm("Would you like special characters (\!@#) in the password?")
+  let choicesObj = {
+  upperCrit : false,
+  lowerCrit : false, 
+  numCrit : false,
+  symbolCrit : false
   }
 
-  return [upperCrit, lowerCrit, numCrit, symbolCrit]
+  while (choicesObj.upperCrit === false && choicesObj.lowerCrit === false && choicesObj.numCrit === false && choicesObj.symbolCrit === false) {
+    window.alert("Please select atleast one character type to be included in the password!")
+    choicesObj.upperCrit = confirm("Would you like uppercase (ABC) in the password? Ok for True, Cancel for False.")
+    choicesObj.lowerCrit = confirm("Would you like lowercase (abc) in the password? Ok for True, Cancel for False.")
+    choicesObj.numCrit = confirm("Would you like numbers (123) in the password? Ok for True, Cancel for False.")
+    choicesObj.symbolCrit = confirm("Would you like special characters (\!@#) in the password?")
+  }
+
+  // while (upperCrit === false && lowerCrit === false && numCrit === false && symbolCrit === false) {
+  //   window.alert("Please select atleast one character type to be included in the password!")
+  //   upperCrit = confirm("Would you like uppercase (ABC) in the password? Ok for True, Cancel for False.")
+  //   lowerCrit = confirm("Would you like lowercase (abc) in the password? Ok for True, Cancel for False.")
+  //   numCrit = confirm("Would you like numbers (123) in the password? Ok for True, Cancel for False.")
+  //   symbolCrit = confirm("Would you like special characters (\!@#) in the password?")
+  // }
+
+  return [passLength, choicesObj.upperCrit, choicesObj.lowerCrit, choicesObj.numCrit, choicesObj.symbolCrit]
 }
 
 // Get references to the #generate element
