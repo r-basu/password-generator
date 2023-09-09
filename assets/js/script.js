@@ -10,7 +10,7 @@ function generatePassword() {
   // Password length choice
   let passLength = 0;
   while (passLength < 8 || passLength > 128) {
-    passLength = window.prompt("Please choose a length of at least 8 characters and no more than 128 characters")
+    passLength = window.prompt("Please choose a number for password character length, at least 8 and no more than 128")
   }
 
   // Password character types choices
