@@ -5,10 +5,6 @@ const lowerCase = letters.toLowerCase();
 const num = [0,1,2,3,4,5,6,7,8,9]
 const symbols = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
 
-// const upperCase = letters.toUpperCase().split("");
-// const lowerCase = letters.toLowerCase().split("");
-// const symbolsArr = symbols.split("");
-
 function generatePassword() {
 
   // Password length choice
@@ -35,38 +31,40 @@ function generatePassword() {
   }
 
   // Validated critera and generating the array of fit criteria.
-let genPass = "";
-let password = "";
-
+  let genPass = "";
+  let password = "";
   if ((passLength >= 8 || passLength <= 128) && 
   (choicesObj.upperCrit === true || choicesObj.lowerCrit === true || 
-    choicesObj.numCrit === true || choicesObj.symbolCrit === true)){
+  choicesObj.numCrit === true || choicesObj.symbolCrit === true)){
 
-      if (choicesObj.upperCrit === true) {
-        genPass += upperCase
-      }
+    //If criteria picked, string concat to generated password pool
+    if (choicesObj.upperCrit === true) {
+      genPass += upperCase
+    }
 
-      if (choicesObj.lowerCrit === true) {
-        genPass += lowerCase
-      }
+    if (choicesObj.lowerCrit === true) {
+      genPass += lowerCase
+    }
 
-      if (choicesObj.numCrit === true) {
-        genPass += num
-      }
+    if (choicesObj.numCrit === true) {
+      genPass += num
+    }
 
-      if (choicesObj.symbolCrit === true) {
-        genPass += symbols
-      }
+    if (choicesObj.symbolCrit === true) {
+      genPass += symbols
+    }
 
-      for (let i = 0; i <= parseInt(passLength); i++) {
-        const randomIndex = parseInt(Math.random() * genPass.length)
-        const randomCharacter = genPass[randomIndex]
+    // Parse passLength string into int for for loop.
+    // Random index generated from generated password pool length - within bounds
+    // Random character pulled from random index of gen pass, and added to password until password length is met.
+    for (let i = 0; i <= parseInt(passLength); i++) {
+      const randomIndex = parseInt(Math.random() * genPass.length)
+      const randomCharacter = genPass[randomIndex]
 
-        password += randomCharacter
+      password += randomCharacter
+    }
 
-      }
-
-    return password;
+  return password;
   }
 }
 
@@ -79,7 +77,6 @@ function writePassword() {
   let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
