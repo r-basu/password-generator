@@ -36,55 +36,38 @@ function generatePassword() {
 
   // Validated critera and generating the array of fit criteria.
 let genPass = "";
+let password = "";
 
   if ((passLength >= 8 || passLength <= 128) && 
   (choicesObj.upperCrit === true || choicesObj.lowerCrit === true || 
     choicesObj.numCrit === true || choicesObj.symbolCrit === true)){
 
       if (choicesObj.upperCrit === true) {
-        // for (let i = 0; i <= upperCase.length-1; i++) {
-        //   genPass.push(upperCase[i]);
-        // }
-
         genPass += upperCase
       }
 
-      // if (choicesObj.lowerCrit === true) {
-      //   for (let i = 0; i <= lowerCase.length-1; i++) {
-      //     genPass.push(lowerCase[i]);
-      //   }
-      // }
-
-      // if (choicesObj.numCrit === true) {
-      //   for (let i = 0; i <= num.length-1; i++) {
-      //     genPass.push(num[i]);
-      //   }
-      // }
-
-      // if (choicesObj.numCrit === true) {
-      //   for (let i = 0; i <= num.length-1; i++) {
-      //     genPass.push(num[i]);
-      //   }
-      // }
-
-      return genPass;
-
       if (choicesObj.lowerCrit === true) {
-        passArr = passArr + letters.toLowerCase().split();
+        genPass += lowerCase
       }
 
       if (choicesObj.numCrit === true) {
-        passArr = passArr + num.split();
+        genPass += num
       }
 
       if (choicesObj.symbolCrit === true) {
-        passArr = passArr + symbols.split();
+        genPass += symbols
       }
 
-      return passArr;
-  }
+      for (let i = 0; i <= parseInt(passLength); i++) {
+        const randomIndex = parseInt(Math.random() * genPass.length)
+        const randomCharacter = genPass[randomIndex]
 
-  return [passLength, choicesObj.upperCrit, choicesObj.lowerCrit, choicesObj.numCrit, choicesObj.symbolCrit]
+        password += randomCharacter
+
+      }
+
+    return password;
+  }
 }
 
 // Get references to the #generate element
