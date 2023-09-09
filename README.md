@@ -6,6 +6,8 @@ Application Page Deployment: https://r-basu.github.io/password-generator/
 
 Initial code skeleton pulled from: https://github.com/coding-boot-camp/friendly-parakeet
 
+![Preview of website](./assets/images/password-generator.png)
+
 ## Acceptance Criteria
 
 ```
